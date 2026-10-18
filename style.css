@@ -1,0 +1,840 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Noto Sans Devanagari', 'DM Sans', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+/* =========================
+   1. GLOBAL STYLES
+========================= */
+
+:root {
+  --ink: #21150f;
+  --cream: #fff8ed;
+  --orange: #f6a623;
+  --red: #b83d18;
+  --green: #17643d;
+  --muted: #6d6258;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrap {
+  width: min(1160px, 92%);
+  margin: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+
+/* =========================
+   2. DEMO NOTICE
+========================= */
+
+.demo {
+  background: #fff0ca;
+  color: #69451a;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 9px 15px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   3. NAVIGATION
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(31, 19, 12, 0.96);
+  color: var(--white);
+  border-bottom: 1px solid #ffffff20;
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+/* Actual restaurant logo */
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.brand small {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #e8d6c6;
+  margin-top: 3px;
+}
+
+.links {
+  display: flex;
+  gap: 25px;
+  font-size: 0.92rem;
+}
+
+.links a {
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--orange);
+}
+
+.nav-cta {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+
+/* =========================
+   4. BUTTONS
+========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 20px;
+  font: 700 0.92rem "DM Sans", sans-serif;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.btn-orange {
+  background: var(--orange);
+  color: #20140d;
+}
+
+.btn-green {
+  background: #138448;
+  color: var(--white);
+}
+
+.btn-outline {
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--orange);
+  color: var(--ink);
+}
+
+
+/* =========================
+   5. HERO SECTION
+========================= */
+
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(25, 13, 7, 0.75),
+      rgba(25, 13, 7, 0.15)
+    ),
+    url("./about-photo.png") center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 630px;
+  padding: 78px 0 62px;
+}
+
+
+/* Remove the extra dark overlay */
+.hero::before {
+  content: none;
+}
+
+.hero-content {
+  padding: 78px 0 62px;
+  max-width: 630px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: #21150f;
+  background: var(--orange);
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 0.83rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  transform: rotate(-1deg);
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin: 22px 0 18px;
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #fff8ed;
+  max-width: 510px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 28px 0 34px;
+}
+
+.trust {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  color: #fff8ed;
+  font-size: 0.87rem;
+}
+
+.trust span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust b {
+  color: var(--orange);
+  font-size: 1.1rem;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 520px;
+    background-position: center;
+  }
+
+  .hero-content {
+    padding: 55px 0 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 10vw, 4rem);
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================
+   6. GENERAL SECTIONS
+========================= */
+
+.section {
+  padding: 76px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.kicker {
+  color: var(--red);
+  font-weight: 800;
+  font-style: italic;
+  margin: 0 0 8px;
+}
+
+.section h2,
+.about h2,
+.contact h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  margin: 0;
+}
+
+.sub {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 610px;
+}
+
+
+/* =========================
+   7. MENU CARDS
+========================= */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.food-card {
+  background: var(--white);
+  border: 1px solid #eadfce;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px #56351a0b;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px #56351a18;
+}
+
+.food-card img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  display: block;
+}
+
+.food-info {
+  padding: 17px;
+}
+
+.food-info h3 {
+  font-size: 1.25rem;
+  margin: 0 0 7px;
+}
+
+.food-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.91rem;
+  line-height: 1.5;
+  min-height: 43px;
+}
+
+.price {
+  color: var(--red);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+.note {
+  font-size: 0.82rem;
+  color: #806f60;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   8. ABOUT SECTION
+========================= */
+
+.about {
+  background: #f3e8d7;
+}
+
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-photo {
+  min-height: 390px;
+  width: calc(100% - 30px);
+  margin-left: 30px;
+  border-radius: 20px;
+  background-image: url("./about-photo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 18px 18px 0 #e5b96b;
+}
+
+@media (max-width: 800px) {
+  .about-photo {
+    width: 100%;
+    margin-left: 0;
+    min-height: 260px;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .about-photo {
+    min-height: 260px;
+    background-position: center;
+  }
+}
+
+.about-copy p {
+  line-height: 1.8;
+  color: #61564d;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.feature {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.feature strong {
+  display: grid;
+  place-items: center;
+  background: #f7d7ad;
+  color: var(--red);
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   9. LOCATION AND HOURS
+========================= */
+
+.visit {
+  background: var(--ink);
+  color: var(--white);
+  padding: 36px 0;
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.visit-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.visit-icon {
+  font-size: 1.8rem;
+  color: var(--orange);
+}
+
+.visit h3 {
+  font-family: "DM Sans", sans-serif;
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.visit p {
+  margin: 0;
+  color: #d8c9bb;
+  line-height: 1.65;
+}
+
+.visit .btn {
+  margin-top: 15px;
+}
+
+
+/* =========================
+   10. CONTACT SECTION
+========================= */
+
+.contact {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 14px;
+}
+
+.contact p {
+  color: var(--muted);
+  max-width: 570px;
+  margin: 0 auto 25px;
+  line-height: 1.7;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+
+/* =========================
+   11. FOOTER
+========================= */
+
+footer {
+  background: #160d08;
+  color: #cbb9a8;
+  padding: 22px 0;
+  font-size: 0.82rem;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+
+/* =========================
+   12. MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--orange);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.menu-toggle:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+
+/* =========================
+   13. TABLET LAYOUT
+========================= */
+
+@media (max-width: 900px) {
+  .nav {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 18px;
+    background: #21150f;
+    flex-direction: column;
+    gap: 18px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 18px #0002;
+  }
+
+  .nav .links.active {
+    display: flex;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    min-height: 530px;
+  }
+
+  .about-grid {
+    gap: 30px;
+  }
+
+  .nav-cta {
+    gap: 6px;
+  }
+
+  .nav-cta .btn {
+    padding: 11px 14px;
+  }
+}
+
+
+/* =========================
+   14. MOBILE LAYOUT
+========================= */
+
+@media (max-width: 600px) {
+  .nav {
+    min-height: 68px;
+    gap: 8px;
+  }
+
+  .brand {
+    font-size: 0.9rem;
+    gap: 7px;
+  }
+
+  .brand-logo {
+    width: 43px;
+    height: 43px;
+  }
+
+  .brand small {
+    font-size: 0.65rem;
+  }
+
+  .nav-cta .btn {
+    font-size: 0;
+    padding: 10px;
+    gap: 0;
+  }
+
+  .nav-cta .btn::first-letter {
+    font-size: 1rem;
+  }
+
+  .hero {
+    min-height: 590px;
+    background-position: 60% center;
+  }
+
+  .hero::before {
+    background: linear-gradient(
+      90deg,
+      rgba(25, 13, 7, 0.94),
+      rgba(25, 13, 7, 0.67)
+    );
+  }
+
+  .hero-content {
+    padding: 65px 0 45px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .trust {
+    gap: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .menu-grid {
+    gap: 12px;
+  }
+
+  .food-card img {
+    height: 135px;
+  }
+
+  .food-info {
+    padding: 12px;
+  }
+
+  .food-info h3 {
+    font-size: 1.05rem;
+  }
+
+  .food-info p {
+    font-size: 0.83rem;
+    min-height: 55px;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }
+
+  .about-grid,
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    min-height: 260px;
+    order: 2;
+  }
+
+  .features {
+    gap: 8px;
+  }
+
+  .feature {
+    font-size: 0.78rem;
+  }
+
+  .visit-grid {
+    gap: 25px;
+  }
+
+  .contact {
+    padding: 55px 0;
+  }
+
+  .footer-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* =========================
+   15. SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+  .brand {
+    font-size: 0.78rem;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .menu-toggle {
+    padding: 7px 9px;
+  }
+
+  .nav-cta .btn {
+    padding: 8px;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-card img {
+    height: 190px;
+  }
+}
+
+
+/* =========================
+   16. ACCESSIBILITY
+========================= */
+
+a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
