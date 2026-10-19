@@ -838,3 +838,43 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Hide mobile icons on desktop */
+.mobile-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .desktop-cta {
+    display: none !important;
+  }
+
+  .mobile-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 19px;
+    flex-shrink: 0;
+  }
+
+  .call-icon {
+    color: #fff;
+    background: #e87524;
+  }
+
+  .whatsapp-icon {
+    color: #fff;
+    background: #25D366;
+  }
+}
