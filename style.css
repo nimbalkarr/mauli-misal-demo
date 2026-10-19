@@ -873,8 +873,11 @@ a:focus-visible {
     background: #e87524;
   }
 
-  .whatsapp-icon {
-    color: #fff;
-    background: #25D366;
-  }
+  
+.whatsapp-icon {
+  background: #25D366;
+  color: #fff;
+  font-size: 22px;
+}
+
 }
